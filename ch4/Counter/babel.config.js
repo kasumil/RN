@@ -4,8 +4,8 @@ module.exports = {
     [
       'babel-plugin-root-import',
       {
-        rootpathPrefix: '~',
-        rootpathSuffix: 'src',
+        rootPathPrefix: '~',
+        rootPathSuffix: 'src',
       },
     ],
   ],
