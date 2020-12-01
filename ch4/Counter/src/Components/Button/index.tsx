@@ -15,8 +15,8 @@ const Button = ({iconName, onPress}: Props) => {
       <Icon
         source={
           iconName === 'plus'
-            ? require('../../Assets/Images/add.png')
-            : require('../../Assets/Images/remove.png')
+            ? require('~/Assets/Images/add.png')
+            : require('~/Assets/Images/remove.png')
         }
       />
     </Container>
