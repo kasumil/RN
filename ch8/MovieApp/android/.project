@@ -1,34 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>app</name>
-	<comment>Project app created by Buildship.</comment>
+	<name>MovieApp</name>
+	<comment>Project android created by Buildship.</comment>
 	<projects>
 	</projects>
 	<buildSpec>
 		<buildCommand>
-<<<<<<< HEAD
-=======
-			<name>org.eclipse.jdt.core.javabuilder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
-		<buildCommand>
->>>>>>> f33c92f7... [fix]스플래쉬 스크린에서 머물던 화면 수정
 			<name>org.eclipse.buildship.core.gradleprojectbuilder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
 	</buildSpec>
 	<natures>
-<<<<<<< HEAD
-=======
-		<nature>org.eclipse.jdt.core.javanature</nature>
->>>>>>> f33c92f7... [fix]스플래쉬 스크린에서 머물던 화면 수정
 		<nature>org.eclipse.buildship.core.gradleprojectnature</nature>
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1608127335673</id>
+			<id>1608127335668</id>
 			<name></name>
 			<type>30</type>
 			<matcher>
