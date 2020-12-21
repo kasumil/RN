@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "SNSapp.app"
-               BlueprintName = "SNSapp"
-               ReferencedContainer = "container:SNSapp.xcodeproj">
+               BuildableName = "SNSApp.app"
+               BlueprintName = "SNSApp"
+               ReferencedContainer = "container:SNSApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "SNSappTests.xctest"
-               BlueprintName = "SNSappTests"
-               ReferencedContainer = "container:SNSapp.xcodeproj">
+               BuildableName = "SNSAppTests.xctest"
+               BlueprintName = "SNSAppTests"
+               ReferencedContainer = "container:SNSApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "SNSapp.app"
-            BlueprintName = "SNSapp"
-            ReferencedContainer = "container:SNSapp.xcodeproj">
+            BuildableName = "SNSApp.app"
+            BlueprintName = "SNSApp"
+            ReferencedContainer = "container:SNSApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "SNSapp.app"
-            BlueprintName = "SNSapp"
-            ReferencedContainer = "container:SNSapp.xcodeproj">
+            BuildableName = "SNSApp.app"
+            BlueprintName = "SNSApp"
+            ReferencedContainer = "container:SNSApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
