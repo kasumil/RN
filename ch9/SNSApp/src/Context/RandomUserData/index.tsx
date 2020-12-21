@@ -1,5 +1,5 @@
-import React, {createContext, useState, useEffect} from 'react';
-import {Image} from 'react-native';
+import React, { createContext, useState, useEffect } from 'react';
+import { Image } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 
 import Loading from '~/Components/Loading';
@@ -19,23 +19,23 @@ const RandomUserDataContext = createContext<IRandomUserData>({
   },
 });
 
-const RandomUserDataProvider = ({cache, children}:Props) => {
+const RandomUserDataProvider = ({ cache, children }: Props) => {
   const [userList, setUserList] = useState<Array<IUserProfile>>([]);
   const [description, setDescription] = useState<Array<string>>([]);
   const [imageList, setImageList] = useState<Array<string>>([]);
 
   const getCacheData = async (key: string) => {
     const cacheData = await AsyncStorage.getItem('key');
-    if (cache === false || cacheData === null ) {
+    if (cache === false || cacheData === null) {
       return undefined;
     };
 
     const cacheList = JSON.parse(cacheData);
 
-    if (cacheList.length !== 25 ) {
+    if (cacheList.length !== 25) {
       return undefined;
     };
-    
+
     return cacheList;
   };
 
@@ -74,7 +74,7 @@ const RandomUserDataProvider = ({cache, children}:Props) => {
         'https://opinionated-quotes-api.gigalixirapp.com/v1/quotes?rand=t&n=25',
       );
       const data = await response.json();
-      
+
     }
   }
 };
