@@ -1,0 +1,4 @@
+#Wed Dec 16 23:04:30 KST 2020
+base.0=C\:\\Users\\ridou\\Desktop\\RN\\ch8\\MovieApp\\android\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
