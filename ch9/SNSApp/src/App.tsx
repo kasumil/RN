@@ -15,7 +15,6 @@ const App = ({}: Props) => {
         <Navigator />
       </UserContextProvider>
     </RandomUserDataProvider>
-  )
-}
-
+  );
+};
 export default App;

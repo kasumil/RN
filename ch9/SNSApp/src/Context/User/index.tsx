@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {createContext, useState, useEffect} from 'react';
 import AsyncStorage from '@react-native-community/async-storage';
 
 const defaultContext: IUserContext = {
@@ -13,7 +13,7 @@ const UserContext = createContext(defaultContext);
 
 interface Props {
   children: JSX.Element | Array<JSX.Element>;
-};
+}
 
 const UserContextProvider = ({ children }: Props) => {
   const [userInfo, setUserInfo] = useState<IUserInfo | undefined>(undefined);
@@ -48,7 +48,7 @@ const UserContextProvider = ({ children }: Props) => {
 
   const logout = (): void => {
     AsyncStorage.removeItem('token');
-    setIsLoading(true);
+    setUserInfo(undefined);
   };
 
   useEffect(() => {
@@ -67,5 +67,6 @@ const UserContextProvider = ({ children }: Props) => {
     >
       {children}
     </UserContext.Provider>
-  )
-}
+  );
+};
+export {UserContextProvider, UserContext};

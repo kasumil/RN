@@ -1,6 +1,6 @@
 interface IUserProfile {
   name: string;
-  phot: string;
+  photo: string;
 }
 
 interface IFeed extends IUserProfile {

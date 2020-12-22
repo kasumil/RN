@@ -8,7 +8,7 @@ type MyFeedTabParamList = {
   MyFeed: undefined;
 };
 
-type FeedTabParamList = {
+type FeedsTabParamList = {
   Feeds: undefined;
   FeedListOnly: undefined;
 };

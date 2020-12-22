@@ -10,7 +10,7 @@ interface Props {
 }
 
 interface IRandomUserData {
-  getMyFeed: (number: number) => Array<IFeed>;
+  getMyFeed: (number?: number) => Array<IFeed>;
 }
 
 const RandomUserDataContext = createContext<IRandomUserData>({
@@ -21,32 +21,31 @@ const RandomUserDataContext = createContext<IRandomUserData>({
 
 const RandomUserDataProvider = ({ cache, children }: Props) => {
   const [userList, setUserList] = useState<Array<IUserProfile>>([]);
-  const [description, setDescription] = useState<Array<string>>([]);
+  const [descriptionList, setDescriptionList] = useState<Array<string>>([]);
   const [imageList, setImageList] = useState<Array<string>>([]);
 
   const getCacheData = async (key: string) => {
-    const cacheData = await AsyncStorage.getItem('key');
+    const cacheData = await AsyncStorage.getItem(key);
     if (cache === false || cacheData === null) {
       return undefined;
-    };
+    }
 
     const cacheList = JSON.parse(cacheData);
 
     if (cacheList.length !== 25) {
       return undefined;
-    };
+    }
 
     return cacheList;
   };
-
-  const setCacheData = (key: string, data: Array<any>) => {
-    AsyncStorage.setItem(key, JSON.stringify(data))
+  const setCachedData = (key: string, data: Array<any>) => {
+    AsyncStorage.setItem(key, JSON.stringify(data));
   };
 
   const setUsers = async () => {
-    const cacheData = await getCacheData('UserList');
-    if (cacheData) {
-      setUserList(cacheData);
+    const cachedData = await getCacheData('UserList');
+    if (cachedData) {
+      setUserList(cachedData);
       return;
     }
 
@@ -56,17 +55,17 @@ const RandomUserDataProvider = ({ cache, children }: Props) => {
       );
       const data = await response.json();
       setUserList(data);
-      setCacheData('UserList', data);
+      setCachedData('UserList', data);
     } catch (err) {
       console.log(err);
     };
   };
 
-  const setDescription = async () => {
-    const cacheData = await getCacheData('DescriptionList');
-    console.log(cacheData);
-    if (cacheData) {
-      setDescription(cacheData);
+  const setDescriptions = async () => {
+    const cachedData = await getCacheData('DescriptionList');
+    console.log(cachedData);
+    if (cachedData) {
+      setDescriptionList(cachedData);
       return;
     }
     try {
@@ -80,22 +79,22 @@ const RandomUserDataProvider = ({ cache, children }: Props) => {
       }
 
       setDescriptionList(text);
-      setCacheData('DescriptionList', text);
+      setCachedData('DescriptionList', text);
     } catch (err) {
       console.log(err);
     }
   };
 
   const setImages = async () => {
-    const cacheData = await getCacheData('ImageList');
-    if (cacheData) {
+    const cachedData = await getCacheData('ImageList');
+    if (cachedData) {
       if (Image.queryCache) {
-        Image.queryCache(cacheData);
-        cacheData.map((data: string) => {
+        Image.queryCache(cachedData);
+        cachedData.map((data: string) => {
           Image.prefetch(data);
         });
       }
-      setImageList(cacheData);
+      setImageList(cachedData);
       return;
     }
 
