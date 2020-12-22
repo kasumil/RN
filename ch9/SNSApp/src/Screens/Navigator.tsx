@@ -1,13 +1,13 @@
-import React from 'react';
-import { Image } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import { createBottomNavigator } from '@react-navigation/bottom-tabs';
+import React, {useContext} from 'react';
+import {Image} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import {createDrawerNavigator} from '@react-navigation/drawer';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import { UserContext } from '~/Context/User';
-import SearchBar from '~/Component/SearchBar';
-import Loading from '~/Component/Loading';
+import SearchBar from '~/Components/SearchBar';
+import Loading from '~/Components/Loading';
 
 // 로그인 컴포넌트
 import Login from '~/Screens/Login';
@@ -21,19 +21,19 @@ import FeedListOnly from '~/Screens/FeedListOnly';
 import Upload from '~/Screens/Upload';
 import Notification from '~/Screens/Notification';
 import Profile from '~/Screens/Profile';
-import CustomDrawer from '~/Screens/CustomDrawer';
+import CustomDrawer from '~/Screens/Drawer';
 
 // 해당 네비게이션 호출
 const Stack = createStackNavigator();
-const BottomTab = createBottomNavigator();
+const BottomTab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
 
 const LoginNavigator = () => {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name='Login' component={Login} />
-      <Stack.Screen name='Signup' component={Signup} />
-      <Stack.Screen name='PasswordReset' component={PasswordReset} />
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="Signup" component={Signup} />
+      <Stack.Screen name="PasswordReset" component={PasswordReset} />
     </Stack.Navigator>
   );
 };
@@ -42,7 +42,7 @@ const MyFeedTab = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name='MyFeed'
+        name="MyFeed"
         component={MyFeed}
         options={{ title: 'SNS App' }}
       />
@@ -50,18 +50,18 @@ const MyFeedTab = () => {
   );
 };
 
-const FeedTab = () => {
+const FeedsTab = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name='Feeds'
+        name="Feeds"
         component={Feeds}
         options={{
-          header: () => <SearchBar />
+          header: () => <SearchBar />,
         }}
       />
       <Stack.Screen
-        name='FeedListOnly'
+        name="FeedListOnly"
         component={FeedListOnly}
         options={{
           headerBackTitleVisible: false,
@@ -77,33 +77,33 @@ const UploadTab = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name='Upload'
+        name="Upload"
         component={Upload}
         options={{
           title: '사진 업로드'
         }}
       />
     </Stack.Navigator>
-  )
-}
+  );
+};
 
 const ProfileTab = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name='Profile'
+        name="Profile"
         component={Profile}
         options={{ title: 'Profile' }}
       />
     </Stack.Navigator>
-  )
-}
+  );
+};
 
-const MainTab = () => {
+const MainTabs = () => {
   return (
-    <BottomTab.Navigator TabBarOptions={{ showLabel: false }}>
+    <BottomTab.Navigator tabBarOptions={{showLabel: false}}>
       <BottomTab.Screen
-        name='MyFeed'
+        name="MyFeed"
         component={MyFeedTab}
         options={{
           tabBarIcon: ({ color, focused }) => (
@@ -111,14 +111,14 @@ const MainTab = () => {
               source={
                 focused
                   ? require('~/Assets/Images/Tabs/ic_home.png')
-                  : require('~/Assets/Images/Tabs/ic_home_online.png')
+                  : require('~/Assets/Images/Tabs/ic_home_outline.png')
               }
             />
           ),
         }}
       />
       <BottomTab.Screen
-        name='Feeds'
+        name="Feeds"
         component={FeedsTab}
         options={{
           tabBarIcon: ({ color, focused }) => (
@@ -126,15 +126,15 @@ const MainTab = () => {
               source={
                 focused
                   ? require('~/Assets/Images/Tabs/ic_search.png')
-                  : require('~/Assets/Images/Tabs/ic_serch_online.png')
+                  : require('~/Assets/Images/Tabs/ic_search_outline.png')
               }
             />
           ),
         }}
       />
       <BottomTab.Screen
-        name='Upload'
-        component={Upload}
+        name="Upload"
+        component={UploadTab}
         options={{
           tabBarLabel: 'Third',
           tabBarIcon: ({ color, focused }) => (
@@ -149,7 +149,7 @@ const MainTab = () => {
         }}
       />
       <BottomTab.Screen
-        name='Notification'
+        name="Notification"
         component={Notification}
         options={{
           tabBarIcon: ({ color, focused }) => (
@@ -164,8 +164,8 @@ const MainTab = () => {
         }}
       />
       <BottomTab.Screen
-        name='Profile'
-        component={Profile}
+        name="Profile"
+        component={ProfileTab}
         options={{
           tabBarIcon: ({ color, focused }) => (
             <Image
@@ -182,28 +182,27 @@ const MainTab = () => {
   );
 };
 
-const MainNavigatior = () => {
+const MainNavigator = () => {
   return (
     <Drawer.Navigator
-      drawerPosition='right'
-      drawerType='slide'
-      drawerContent={(props) => <CustomDrawer prop={props} />}
-    >
-      <Drawer.Screen name='MainTabs' component={MainTab} />
+      drawerPosition="right"
+      drawerType="slide"
+      drawerContent={(props) => <CustomDrawer props={props} />}>
+      <Drawer.Screen name="MainTabs" component={MainTabs} />
     </Drawer.Navigator>
   );
 };
 
 export default () => {
-  const { isLoading, setIsLoading } = useContext<IUserContext>(UserContext);
+  const {isLoading, userInfo} = useContext<IUserContext>(UserContext);
 
   if (isLoading === false) {
-    return <Loading />
-  };
+    return <Loading />;
+  }
 
   return (
     <NavigationContainer>
-      {userInfo ? <MovieNavigator /> : <LoginNavigator />}
+      {userInfo ? <MainNavigator /> : <LoginNavigator />}
     </NavigationContainer>
   );
 };

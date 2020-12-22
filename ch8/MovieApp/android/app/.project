@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>app</name>
+	<comment>Project app created by Buildship.</comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 73c4f3d5... 임시커밋
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+<<<<<<< HEAD
+>>>>>>> f33c92f7... [fix]스플래쉬 스크린에서 머물던 화면 수정
+=======
+>>>>>>> 73c4f3d5... 임시커밋
+			<name>org.eclipse.buildship.core.gradleprojectbuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+		<nature>org.eclipse.jdt.core.javanature</nature>
+>>>>>>> f33c92f7... [fix]스플래쉬 스크린에서 머물던 화면 수정
+=======
+		<nature>org.eclipse.jdt.core.javanature</nature>
+>>>>>>> 73c4f3d5... 임시커밋
+		<nature>org.eclipse.buildship.core.gradleprojectnature</nature>
+	</natures>
+	<filteredResources>
+		<filter>
+<<<<<<< HEAD
+			<id>1608127335673</id>
+=======
+			<id>1608126645727</id>
+>>>>>>> 73c4f3d5... 임시커밋
+			<name></name>
+			<type>30</type>
+			<matcher>
+				<id>org.eclipse.core.resources.regexFilterMatcher</id>
+				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
+			</matcher>
+		</filter>
+	</filteredResources>
+</projectDescription>
