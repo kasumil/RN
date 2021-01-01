@@ -1,6 +1,6 @@
 # RN
 
-[![리액트네이티브카운터](http://img.youtube.com/vi/wQ0L7w54RTY/0.)](https://youtu.be/wQ0L7w54RTY)
+[![리액트네이티브카운터](http://img.youtube.com/vi/wQ0L7w54RTY/0.jpg)](https://youtu.be/wQ0L7w54RTY)
 
 [![TodoList만들기](http://img.youtube.com/vi/zFlTWhzbfnI/0.jpg)](https://youtu.be/zFlTWhzbfnI)
 
