@@ -1,6 +1,6 @@
 # RN
 
-동영상입니다. 클릭해보세요
+* 동영상입니다. 클릭해보세요
 
 [![리액트네이티브카운터](http://img.youtube.com/vi/wQ0L7w54RTY/0.jpg)](https://youtu.be/wQ0L7w54RTY)
 
